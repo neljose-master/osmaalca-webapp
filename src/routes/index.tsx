@@ -197,22 +197,30 @@ function HomePage() {
               { n: "1000+", l: "Produtores assistidos" },
               { n: "10+", l: "Parceiros institucionais" },
             ].map((s) => {
-              const valueClass =
-                s.n === "Nacional"
-                  ? "text-4xl md:text-[2.6rem] lg:text-[2.05rem] xl:text-[2.35rem] 2xl:text-[2.6rem]"
-                  : "text-5xl";
+              const isNacional = s.n === "Nacional";
 
               return (
                 <div
                   key={s.l}
-                  className="bg-white p-8 text-center border-t-4 border-gold shadow-sm hover:shadow-lg transition-shadow flex min-h-[176px] flex-col items-center justify-center"
+                  className="bg-white px-6 py-10 text-center border-t-4 border-gold shadow-sm hover:shadow-lg transition-shadow flex min-h-[176px] flex-col items-center justify-center overflow-hidden"
                 >
                   <p
-                    className={`${valueClass} block w-full text-center font-display font-bold leading-none text-forest whitespace-nowrap`}
+                    className={`${
+                      isNacional ? "" : "text-5xl"
+                    } block w-full text-center font-display font-bold leading-none text-forest whitespace-nowrap`}
+                    style={
+                      isNacional
+                        ? {
+                            fontSize: "clamp(2.1rem, 2.35vw, 2.65rem)",
+                            letterSpacing: "-0.045em",
+                            textAlign: "center",
+                          }
+                        : undefined
+                    }
                   >
                     {s.n}
                   </p>
-                  <p className="text-xs uppercase tracking-widest text-charcoal/60 mt-4">
+                  <p className="text-xs uppercase tracking-widest text-charcoal/60 mt-4 px-2">
                     {s.l}
                   </p>
                 </div>
