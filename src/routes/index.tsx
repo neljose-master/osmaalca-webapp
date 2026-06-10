@@ -196,17 +196,28 @@ function HomePage() {
               { n: "Nacional", l: "Cobertura" },
               { n: "1000+", l: "Produtores assistidos" },
               { n: "10+", l: "Parceiros institucionais" },
-            ].map((s) => (
-              <div
-                key={s.l}
-                className="bg-white p-8 text-center border-t-4 border-gold shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <p className="text-5xl font-display font-bold text-forest">{s.n}</p>
-                <p className="text-xs uppercase tracking-widest text-charcoal/60 mt-3">
-                  {s.l}
-                </p>
-              </div>
-            ))}
+            ].map((s) => {
+              const valueClass =
+                s.n === "Nacional"
+                  ? "text-4xl md:text-[2.65rem] lg:text-[2.25rem] xl:text-[2.6rem]"
+                  : "text-5xl";
+
+              return (
+                <div
+                  key={s.l}
+                  className="bg-white p-8 text-center border-t-4 border-gold shadow-sm hover:shadow-lg transition-shadow"
+                >
+                  <p
+                    className={`${valueClass} font-display font-bold leading-none text-forest whitespace-nowrap`}
+                  >
+                    {s.n}
+                  </p>
+                  <p className="text-xs uppercase tracking-widest text-charcoal/60 mt-4">
+                    {s.l}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
