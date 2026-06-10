@@ -1,34 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { services } from "@/lib/services";
-import { projects } from "@/lib/projects";
-import { gallery } from "@/lib/gallery";
+import { servicesEn } from "@/lib/services-en";
+import { projectsEn } from "@/lib/projects-en";
+import { galleryEn } from "@/lib/gallery-en";
 import heroImg from "@/assets/hero-valley.jpg";
 import agronomistImg from "@/assets/agronomist.jpg";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/en")({
   head: () => ({
     meta: [
-      { title: "OSMAALCA | Consultoria Agrícola e Agronegócio em Moçambique" },
+      { title: "OSMAALCA | Agricultural Consulting and Agribusiness in Mozambique" },
       {
         name: "description",
         content:
-          "Consultoria estratégica e técnica em agronomia, agro-processamento, estudos sócio-económicos e desenvolvimento comunitário em Moçambique.",
+          "Strategic and technical consulting in agronomy, agro-processing, socio-economic studies and community development in Mozambique.",
       },
-      { property: "og:title", content: "OSMAALCA Consultoria & Serviços" },
+      { property: "og:title", content: "OSMAALCA Consulting & Services" },
       {
         property: "og:description",
-        content: "Cultivando o futuro do agronegócio moçambicano.",
+        content: "Cultivating the future of Mozambican agribusiness.",
       },
     ],
   }),
-  component: HomePage,
+  component: EnglishHomePage,
 });
 
-function HomePage() {
-  const featuredServices = services.slice(0, 6);
-  const featuredProjects = projects.slice(0, 2);
+function EnglishHomePage() {
+  const featuredServices = servicesEn.slice(0, 6);
+  const featuredProjects = projectsEn.slice(0, 2);
 
   return (
     <SiteLayout>
@@ -36,7 +36,7 @@ function HomePage() {
       <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-forest">
         <img
           src={heroImg}
-          alt="Vista panorâmica de campos agrícolas em Moçambique ao amanhecer"
+          alt="Panoramic view of agricultural fields in Mozambique at sunrise"
           width={1920}
           height={1080}
           className="absolute inset-0 w-full h-full object-cover opacity-40"
@@ -46,29 +46,29 @@ function HomePage() {
           <div className="space-y-8">
             <div className="inline-block border-l-4 border-gold pl-4">
               <span className="text-gold font-semibold tracking-[0.2em] uppercase text-sm">
-                Excelência em Agronegócio
+                Excellence in Agribusiness
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-display font-bold text-cream leading-[1.05]">
-              Soluções sustentáveis para a <span className="text-gold">consultoria e serviços agrícolas</span>
+              Sustainable solutions for <span className="text-gold">agricultural consulting and services</span>
             </h1>
             <p className="text-lg text-cream/80 max-w-lg leading-relaxed">
-              Consultoria estratégica e técnica especializada para transformar
-              o potencial agrícola em prosperidade sustentável e
-              desenvolvimento comunitário.
+              Specialized strategic and technical consulting that transforms
+              agricultural potential into sustainable prosperity and community
+              development.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                to="/servicos"
+                to="/en/services"
                 className="bg-gold text-forest px-8 py-4 font-bold rounded-sm hover:-translate-y-0.5 hover:shadow-xl transition-all"
               >
-                Nossos Serviços
+                Our Services
               </Link>
               <Link
-                to="/contactos"
+                to="/en/contacts"
                 className="border border-cream/30 text-cream px-8 py-4 font-bold rounded-sm hover:bg-cream/10 transition-colors"
               >
-                Fale Connosco
+                Contact Us
               </Link>
             </div>
           </div>
@@ -81,45 +81,45 @@ function HomePage() {
           <div className="relative">
             <img
               src={agronomistImg}
-              alt="Agrónomo moçambicano analisando culturas"
+              alt="Mozambican agronomist analysing crops"
               width={800}
               height={1000}
               loading="lazy"
               className="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl"
             />
             <div className="absolute -bottom-8 -right-4 md:-right-10 bg-agri p-8 md:p-10 text-cream shadow-xl">
-              <p className="text-3xl md:text-4xl font-display font-bold">+5 Anos</p>
+              <p className="text-3xl md:text-4xl font-display font-bold">+5 Years</p>
               <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">
-                De Experiência Local
+                Local Experience
               </p>
             </div>
           </div>
           <div className="space-y-6">
             <span className="text-agri font-semibold tracking-widest uppercase text-xs">
-              Sobre a OSMAALCA
+              About OSMAALCA
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-forest leading-tight">
-              Compromisso com o Desenvolvimento Rural Sustentável
+              Committed to Sustainable Rural Development
             </h2>
             <p className="text-charcoal/80 leading-relaxed text-lg">
-              A OSMAALCA é mais do que uma consultoria; somos parceiros na
-              implementação de soluções resilientes. Atuamos desde estudos de
-              viabilidade até a agro-indústria de grande escala, sempre focados
-              no impacto sócio-económico positivo.
+              OSMAALCA is more than a consulting firm; we are an implementation
+              partner for resilient agricultural solutions. We work from
+              feasibility studies to large-scale agro-industry, always focused
+              on positive socio-economic impact.
             </p>
             <ul className="space-y-4 pt-2">
               {[
                 {
-                  t: "Especialização Local",
-                  d: "Profundo conhecimento do mercado e regulamentações de Moçambique.",
+                  t: "Local Expertise",
+                  d: "Deep knowledge of Mozambique’s market, institutions and regulatory environment.",
                 },
                 {
-                  t: "Inovação Técnica",
-                  d: "Métodos modernos de agronomia, gestão de projectos e tecnologia.",
+                  t: "Technical Innovation",
+                  d: "Modern agronomy, project management and technology-driven methodologies.",
                 },
                 {
-                  t: "Parceria Global",
-                  d: "Experiência com ONGs internacionais e instituições públicas.",
+                  t: "Institutional Partnerships",
+                  d: "Experience with international NGOs, public institutions and private-sector partners.",
                 },
               ].map((i) => (
                 <li key={i.t} className="flex items-start gap-3">
@@ -144,17 +144,17 @@ function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
             <div className="max-w-2xl">
               <span className="text-gold font-semibold tracking-widest uppercase text-xs">
-                Soluções Integradas
+                Integrated Solutions
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold mt-4">
-                Nossas Áreas de Atuação
+                Our Areas of Expertise
               </h2>
             </div>
             <Link
-              to="/servicos"
+              to="/en/services"
               className="text-gold border-b border-gold/40 pb-1 hover:border-gold transition-all inline-flex items-center gap-2"
             >
-              Ver todos os serviços <ArrowRight size={16} />
+              View all services <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -183,22 +183,22 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-agri font-semibold tracking-widest uppercase text-xs">
-              Porquê a OSMAALCA
+              Why OSMAALCA
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-forest mt-4">
-              Rigor, Impacto e Confiança
+              Rigour, Impact and Trust
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { n: "5+", l: "Anos de experiência" },
-              { n: "10+", l: "Projectos entregues" },
-              { n: "Nacional", l: "Cobertura" },
-              { n: "1000+", l: "Produtores assistidos" },
-              { n: "10+", l: "Parceiros institucionais" },
+              { n: "5+", l: "Years of experience" },
+              { n: "10+", l: "Projects delivered" },
+              { n: "National", l: "Coverage" },
+              { n: "1000+", l: "Farmers supported" },
+              { n: "10+", l: "Institutional partners" },
             ].map((s) => {
               const valueClass =
-                s.n === "Nacional"
+                s.n === "National"
                   ? "text-4xl md:text-[2.65rem] lg:text-[2.2rem] xl:text-[2.55rem]"
                   : "text-5xl";
 
@@ -228,17 +228,17 @@ function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
             <div>
               <span className="text-agri font-semibold tracking-widest uppercase text-xs">
-                Portfólio
+                Portfolio
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-forest mt-4">
-                Projectos em Destaque
+                Featured Projects
               </h2>
             </div>
             <Link
-              to="/projetos"
+              to="/en/projects"
               className="text-agri font-semibold border-b-2 border-gold pb-1 inline-flex items-center gap-2 hover:gap-3 transition-all"
             >
-              Ver todos os projectos <ArrowRight size={16} />
+              View all projects <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -295,22 +295,22 @@ function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
             <div>
               <span className="text-agri font-semibold tracking-widest uppercase text-xs">
-                Em Imagens
+                In Images
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-forest mt-4">
-                Do Campo à Indústria
+                From Field to Industry
               </h2>
             </div>
             <Link
-              to="/galeria"
+              to="/en/gallery"
               className="text-agri font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
             >
-              Ver galeria completa <ArrowRight size={16} />
+              View full gallery <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {gallery.slice(0, 4).map((g) => (
-              <div key={g.alt} className="aspect-square overflow-hidden">
+            {galleryEn.slice(0, 4).map((g, index) => (
+              <div key={`${g.alt}-${index}`} className="aspect-square overflow-hidden">
                 <img
                   src={g.src}
                   alt={g.alt}
@@ -328,25 +328,24 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-gold p-12 md:p-20 text-center space-y-8 rounded-sm">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-forest leading-tight">
-              Pronto para impulsionar o seu projecto agrícola?
+              Ready to strengthen your agricultural project?
             </h2>
             <p className="text-forest/80 text-lg max-w-2xl mx-auto">
-              Entre em contacto com os nossos especialistas para uma consulta
-              inicial e descubra como podemos agregar valor ao seu negócio ou
-              iniciativa social.
+              Contact our specialists for an initial consultation and discover
+              how we can add value to your business or social initiative.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                to="/contactos"
+                to="/en/contacts"
                 className="bg-forest text-cream px-10 py-4 font-bold rounded-sm shadow-lg hover:bg-forest/90 transition-colors"
               >
-                Agendar Consultoria
+                Book a Consultation
               </Link>
               <Link
-                to="/servicos"
+                to="/en/services"
                 className="bg-transparent border-2 border-forest text-forest px-10 py-4 font-bold rounded-sm hover:bg-forest hover:text-cream transition-colors"
               >
-                Ver Serviços
+                View Services
               </Link>
             </div>
           </div>

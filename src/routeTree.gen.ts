@@ -9,6 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as EnServicesRouteImport } from './routes/en.services'
+import { Route as EnProjectsRouteImport } from './routes/en.projects'
+import { Route as EnGalleryRouteImport } from './routes/en.gallery'
+import { Route as EnContactsRouteImport } from './routes/en.contacts'
+import { Route as EnAboutRouteImport } from './routes/en.about'
+import { Route as EnRouteImport } from './routes/en'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as ProjetosRouteImport } from './routes/projetos'
@@ -16,6 +22,36 @@ import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as ContactosRouteImport } from './routes/contactos'
 import { Route as IndexRouteImport } from './routes/index'
 
+const EnServicesRoute = EnServicesRouteImport.update({
+  id: '/en/services',
+  path: '/en/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnProjectsRoute = EnProjectsRouteImport.update({
+  id: '/en/projects',
+  path: '/en/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnGalleryRoute = EnGalleryRouteImport.update({
+  id: '/en/gallery',
+  path: '/en/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnContactsRoute = EnContactsRouteImport.update({
+  id: '/en/contacts',
+  path: '/en/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnAboutRoute = EnAboutRouteImport.update({
+  id: '/en/about',
+  path: '/en/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnRoute = EnRouteImport.update({
+  id: '/en',
+  path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -50,6 +86,12 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contactos': typeof ContactosRoute
+  '/en': typeof EnRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contacts': typeof EnContactsRoute
+  '/en/gallery': typeof EnGalleryRoute
+  '/en/projects': typeof EnProjectsRoute
+  '/en/services': typeof EnServicesRoute
   '/galeria': typeof GaleriaRoute
   '/projetos': typeof ProjetosRoute
   '/servicos': typeof ServicosRoute
@@ -58,6 +100,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contactos': typeof ContactosRoute
+  '/en': typeof EnRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contacts': typeof EnContactsRoute
+  '/en/gallery': typeof EnGalleryRoute
+  '/en/projects': typeof EnProjectsRoute
+  '/en/services': typeof EnServicesRoute
   '/galeria': typeof GaleriaRoute
   '/projetos': typeof ProjetosRoute
   '/servicos': typeof ServicosRoute
@@ -67,6 +115,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contactos': typeof ContactosRoute
+  '/en': typeof EnRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contacts': typeof EnContactsRoute
+  '/en/gallery': typeof EnGalleryRoute
+  '/en/projects': typeof EnProjectsRoute
+  '/en/services': typeof EnServicesRoute
   '/galeria': typeof GaleriaRoute
   '/projetos': typeof ProjetosRoute
   '/servicos': typeof ServicosRoute
@@ -77,16 +131,40 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contactos'
+    | '/en'
+    | '/en/about'
+    | '/en/contacts'
+    | '/en/gallery'
+    | '/en/projects'
+    | '/en/services'
     | '/galeria'
     | '/projetos'
     | '/servicos'
     | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contactos' | '/galeria' | '/projetos' | '/servicos' | '/sobre'
+  to:
+    | '/'
+    | '/contactos'
+    | '/en'
+    | '/en/about'
+    | '/en/contacts'
+    | '/en/gallery'
+    | '/en/projects'
+    | '/en/services'
+    | '/galeria'
+    | '/projetos'
+    | '/servicos'
+    | '/sobre'
   id:
     | '__root__'
     | '/'
     | '/contactos'
+    | '/en'
+    | '/en/about'
+    | '/en/contacts'
+    | '/en/gallery'
+    | '/en/projects'
+    | '/en/services'
     | '/galeria'
     | '/projetos'
     | '/servicos'
@@ -96,6 +174,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactosRoute: typeof ContactosRoute
+  EnRoute: typeof EnRoute
+  EnAboutRoute: typeof EnAboutRoute
+  EnContactsRoute: typeof EnContactsRoute
+  EnGalleryRoute: typeof EnGalleryRoute
+  EnProjectsRoute: typeof EnProjectsRoute
+  EnServicesRoute: typeof EnServicesRoute
   GaleriaRoute: typeof GaleriaRoute
   ProjetosRoute: typeof ProjetosRoute
   ServicosRoute: typeof ServicosRoute
@@ -104,6 +188,48 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/en/services': {
+      id: '/en/services'
+      path: '/en/services'
+      fullPath: '/en/services'
+      preLoaderRoute: typeof EnServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/projects': {
+      id: '/en/projects'
+      path: '/en/projects'
+      fullPath: '/en/projects'
+      preLoaderRoute: typeof EnProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/gallery': {
+      id: '/en/gallery'
+      path: '/en/gallery'
+      fullPath: '/en/gallery'
+      preLoaderRoute: typeof EnGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/contacts': {
+      id: '/en/contacts'
+      path: '/en/contacts'
+      fullPath: '/en/contacts'
+      preLoaderRoute: typeof EnContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/about': {
+      id: '/en/about'
+      path: '/en/about'
+      fullPath: '/en/about'
+      preLoaderRoute: typeof EnAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -152,6 +278,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactosRoute: ContactosRoute,
+  EnRoute: EnRoute,
+  EnAboutRoute: EnAboutRoute,
+  EnContactsRoute: EnContactsRoute,
+  EnGalleryRoute: EnGalleryRoute,
+  EnProjectsRoute: EnProjectsRoute,
+  EnServicesRoute: EnServicesRoute,
   GaleriaRoute: GaleriaRoute,
   ProjetosRoute: ProjetosRoute,
   ServicosRoute: ServicosRoute,
