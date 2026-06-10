@@ -189,11 +189,12 @@ function HomePage() {
               Rigor, Impacto e Confiança
             </h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
               { n: "5+", l: "Anos de experiência" },
               { n: "10+", l: "Projectos entregues" },
               { n: "Nacional", l: "Cobertura" },
+              { n: "1000+", l: "Produtores assistidos" },
               { n: "10+", l: "Parceiros institucionais" },
             ].map((s) => (
               <div

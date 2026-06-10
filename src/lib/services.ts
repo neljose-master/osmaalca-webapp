@@ -15,9 +15,9 @@ export const services = [
   {
     icon: Sprout,
     title: "Agronomia",
-    short: "Gestão técnica de culturas, solos e otimização de colheitas.",
+    short: "Gestão técnica de culturas, farmas agrárias, solos e colheitas.",
     description:
-      "Suporte técnico especializado em agronomia, gestão de solos e otimização de colheitas para produtores de todos os tamanhos, com foco em produtividade e sustentabilidade.",
+      "Suporte técnico especializado em agronomia, gestão de farmas agrárias, gestão de solos e otimização de colheitas para produtores de todos os tamanhos, com foco em produtividade e sustentabilidade.",
   },
   {
     icon: Factory,
