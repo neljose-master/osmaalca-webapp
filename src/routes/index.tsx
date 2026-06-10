@@ -199,16 +199,16 @@ function HomePage() {
             ].map((s) => {
               const valueClass =
                 s.n === "Nacional"
-                  ? "text-4xl md:text-[2.65rem] lg:text-[2.25rem] xl:text-[2.6rem]"
+                  ? "text-4xl md:text-[2.6rem] lg:text-[2.05rem] xl:text-[2.35rem] 2xl:text-[2.6rem]"
                   : "text-5xl";
 
               return (
                 <div
                   key={s.l}
-                  className="bg-white p-8 text-center border-t-4 border-gold shadow-sm hover:shadow-lg transition-shadow"
+                  className="bg-white p-8 text-center border-t-4 border-gold shadow-sm hover:shadow-lg transition-shadow flex min-h-[176px] flex-col items-center justify-center"
                 >
                   <p
-                    className={`${valueClass} font-display font-bold leading-none text-forest whitespace-nowrap`}
+                    className={`${valueClass} block w-full text-center font-display font-bold leading-none text-forest whitespace-nowrap`}
                   >
                     {s.n}
                   </p>
